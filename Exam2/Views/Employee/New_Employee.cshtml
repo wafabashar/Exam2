@@ -1,0 +1,152 @@
+﻿@model vmEmployee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New_Employee</title>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <h2>New Employee</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Name
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <input type="text" class="form-control" asp-for="employee.Name" />
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Phone
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <input type="text" class="form-control" asp-for="employee.Phone"/>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Email
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <input type="text" class="form-control" asp-for="employee.Email"/>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Country
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <select class="form-control" asp-for="employee.Country_id" asp-items='new SelectList(Model.licountry,"ID","Name")'></select>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Department
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <select class="form-control" asp-for="employee.Department_id" asp-items='new SelectList(Model.liDepartment,"ID","Name")'></select>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Bairth Date
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <input type="text" class="form-control" asp-for="employee.BD" />
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <span>
+                        Image
+                    </span>
+                </div>
+                <div class="col-lg-4">
+
+                    <input type="file" style="display:none" id="img" asp-for="employee.Image"/>
+                    <label  for="img" class="btn btn-primary">Upload</label>
+
+                </div>
+            </div>
+
+            <div class="row">
+           
+               
+                <div class="col-lg-2">
+
+      <input type="submit" value="SAVE" class="btn btn-primary"  asp-action="Save"/>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </form>
+
+
+</body>
+</html>
